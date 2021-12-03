@@ -65,9 +65,9 @@ export default {
       axios
         .post("/attendees/login", myFormData)
         .then((myResponse) => {
-          // console.log("the response", myResponse);
+          console.log("the response", myResponse);
 
-          this.$store.commit("storeTokenInApp", myResponse.data.token);
+          this.$store.commit("storeTokenInApp", myResponse.data.Token);
           this.$store.commit("storeUserInApp", myResponse.data.user);
 
           this.$router.replace("/account");

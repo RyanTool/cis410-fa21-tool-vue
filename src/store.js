@@ -2,13 +2,13 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    token: null,
+    Token: null,
     user: null,
     events: [],
   },
   mutations: {
     storeTokenInApp(state, myToken) {
-      state.token = myToken;
+      state.Token = myToken;
     },
 
     storeUserInApp(state, theUser) {
