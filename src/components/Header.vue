@@ -23,7 +23,7 @@
               >Events</router-link
             >
           </li>
-          <li class="nav-item">
+          <li v-if="auth" class="nav-item">
             <router-link
               class="nav-link active"
               aria-current="page"
@@ -31,12 +31,12 @@
               >My Account</router-link
             >
           </li>
-          <li class="nav-item">
+          <li v-if="!auth" class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/login"
               ><button class="btn btn-warning">Login</button></router-link
             >
           </li>
-          <li class="nav-item">
+          <li v-if="!auth" class="nav-item">
             <router-link
               class="nav-link active"
               aria-current="page"
@@ -46,14 +46,29 @@
               </button></router-link
             >
           </li>
-          <li class="nav-item">
-            <button class="btn btn-warning">Logout</button>
+          <li v-if="auth" class="nav-item">
+            <button class="btn btn-warning" @click="onLogout">Logout</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  computed: {
+    auth() {
+      return this.$store.state.Token;
+    },
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch("logout");
+    },
+  },
+};
+</script>
 
 <style scoped>
 .navbar-nav {
