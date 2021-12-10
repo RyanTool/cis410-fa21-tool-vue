@@ -30,7 +30,7 @@ const router = createRouter({
     {
       path: "/events/:pk",
       component: EventDetail,
-      children: [{ path: "/entry", component: EventEntry }],
+      children: [{ path: "entry", component: EventEntry }],
     },
     { path: "/signup", component: Signup },
     { path: "/:invalidroute(.*)", component: NotFound },

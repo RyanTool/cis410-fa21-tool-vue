@@ -11,7 +11,7 @@
     <table v-if="entriesByUser" class="table">
       <thead>
         <th>Event ID</th>
-        <th>Entry Date/Time</th>
+        <th>Entry Date</th>
       </thead>
       <tbody>
         <tr v-for="thisEntry in entriesByUser" :key="thisEntry.EntryPK">

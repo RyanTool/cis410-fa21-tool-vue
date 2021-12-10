@@ -23,6 +23,8 @@
         Sign in to add entry
       </button></router-link
     >
+    <br /><br />
+    <router-view />
   </div>
 </template>
 
